@@ -1,0 +1,75 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  font-family: Source Sans Pro, sans-serif;
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+main {
+  width: 90%;
+  background-color: f4f1ec;
+  margin: auto;
+}
+
+.profile {
+  height: 400px;
+  width: 100%;
+  background-color: #cc8800;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .header-main {
+    display: flex;
+  }
+
+  .profile {
+    width: 20rem;
+    margin: 40px 40px;
+    height: 15rem;
+  }
+
+  .profile img {
+    width: 130px;
+    margin-top: 20px;
+  }
+
+  .name {
+    color: white;
+    font-size: 0.6em;
+  }
+
+  .container {
+    font-size: medium;
+    flex-grow: 1;
+    margin: 0 50px;
+  }
+}

@@ -1,0 +1,41 @@
+//Import Sass Variables
+@use 'layout';
+
+.new-tweet h4 {
+  padding-bottom: 10px; 
+  border-bottom: 5px solid black;
+  margin-bottom: 10px;
+}
+
+.sub-new-tweet {
+  font-family: layout.$font-title;
+  color: black;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  color: white;
+  background-color: layout.$nav-color;
+}
+
+textarea {
+  width: 100%;
+  border: 2px solid layout.$nav-color;
+  background-color: layout.$background-color;
+}
+
+.maxedWordCount {
+  color: red;
+}
+
+.error {
+  border: 2px solid #c92432;
+  color: #c92432;
+  background: layout.$background-color;
+  font-size: 0.9rem;
+  display: none;
+  text-align: center;
+  padding: 10px; 
+}

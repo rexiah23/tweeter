@@ -1,0 +1,83 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  font-family: Source Sans Pro, sans-serif;
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+main {
+  width: 90%;
+  background-color: f4f1ec;
+  margin: auto;
+}
+
+nav {
+  color: white;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav span {
+  margin: 0px 1.5rem;
+}
+nav .title {
+  font-family: "Bungee";
+}
+nav .sub-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav .sub-title img {
+  width: 1.5rem;
+}
+nav .sub-title img:hover {
+  animation: MoveUpDown 1s linear infinite;
+  position: relative;
+}
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(15px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  nav span {
+    font-size: 0.8em;
+  }
+  nav .title {
+    font-size: 0.7em;
+  }
+}

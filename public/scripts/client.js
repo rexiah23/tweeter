@@ -64,8 +64,6 @@
   const newTweetHandler = function(event) {
     event.preventDefault();
     const data = $(this).serialize();
-    const tweetText2 = $(this).find('textarea').val();
-    console.log("THIS IS TWEETEXT@: ", tweetText2);
     const tweetText = event.target.text.value;
     const newTweet = $('.new-tweet');
     //Custom Error handling
@@ -76,12 +74,21 @@
       }
       return;
     }
+
+    if (tweetText.length <= 0) {
+      newTweet.prepend("<h1 class='error'>Tweet content is empty! Please write your tweet and resubmit it!</h1>");
+      return $('.error').slideDown('700');
+    }
     
     $('.error').remove();
     
     $.post('/tweets/', data)
-      .then(() => tweetsGetReq())
-      .done(() => console.log('The post request worked!'));
+      .then(() => {
+      $('textarea[name="text"]').val('');
+      $('output.counter').val(140);
+      $('#tweets-container').empty();
+      tweetsGetReq()
+      })
   };
 
   let firstClick = true;
